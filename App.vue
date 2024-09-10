@@ -131,13 +131,7 @@
             route: 'pages/reservation/reservation'
 
           },
-          // {
-          //   id: '1559063685168816111',
-          //   url: 'http://cdn.cestech.com.cn/BkpKnowledge/img/1d49caec1ae6442eb95e381a2ceed970.png',
-          //   title: '分类查询',
-          //   route: 'pageB/classification/classification'
-
-          // },
+          // {  
 
         ],
         current: 0,

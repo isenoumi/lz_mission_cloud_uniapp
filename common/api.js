@@ -5,7 +5,7 @@ import {
 
 
 const mainRequest = new RequestService(getEnv('BASE_API_URL'));
-
+console.log('aaa', mainRequest, RequestService);
 
 /********************登陆注册基础相关********************/
 export const login = (params = {}) => mainRequest.post('/login', params); //登录
@@ -14,7 +14,7 @@ export const bindinfo = (params = {}) => mainRequest.post('/user/bind_info', par
 export const message = (params = {}) => mainRequest.get('/user/message', params); //获取未读消息
 export const points_log = (params = {}) => mainRequest.get('/user/points_log', params); //获取用户积分记录
 export const community = (params = {}) => mainRequest.get('/community', params); //获取小区、栋、单元
-export const userInfo = (params = {}) => mainRequest.get('/user/info', params);//获取用户信息
+export const userInfo = (params = {}) => mainRequest.get('/user/info', params); //获取用户信息
 /********************客户相关********************/
 export const customerregions = (params = {}) => mainRequest.get('/customer/regions', params); //获取以开放区域
 export const customerallbyregion = (params = {}) => mainRequest.get('/customer/all_by_region', params); //获取客户列表
@@ -30,7 +30,8 @@ export const supervisortaskqrcode = (params = {}) => mainRequest.get('/superviso
 export const supervisortasksaveanswer = (params = {}) => mainRequest.post('/supervisor/task/save_answer',
 	params); //获取已开放区域
 /********************任务********************/
-export const tasklist = (params = {}) => mainRequest.get('/supervisor/task/list', params); //任务列表
+// export const tasklist = (params = {}) => mainRequest.get('/supervisor/task/list', params); //任务列表
+export const tasklist = (params = {}) => mainRequest.get('/supervisor/dist/task/list', params); //任务列表
 export const taskone = (params = {}) => mainRequest.get('/supervisor/task/one', params); //任务详情
 export const taskaccept = (params = {}) => mainRequest.post('/supervisor/task/accept', params); //接受任务
 export const tasksuccess = (params = {}) => mainRequest.post('/supervisor/task/success', params); //完成任务
@@ -57,22 +58,23 @@ export const courseknowledgeread = (params = {}) => mainRequest.post('/course/kn
 
 /********************活动管理********************/
 export const activitylist = (params = {}) => mainRequest.get('/activity/list', params); //活动列表
-export const activityone = (params = {}) => mainRequest.get('/activity/one', params); //活动详情
+// export const activityone = (params = {}) => mainRequest.get('/activity/one', params); //活动详情
+export const activityone = (params = {}) => mainRequest.get('/activity/oneNew', params); //活动详情
 /********************评论管理********************/
 export const commentlist = (params = {}) => mainRequest.get('/comment/list', params); //评论列表
 export const commentone = (params = {}) => mainRequest.get('/comment/one', params); //评论详情
 export const commentsave = (params = {}) => mainRequest.post('/comment/save', params); //保存评论
 
 /********************预约管理********************/
-export const bookadd = (params = {}) => mainRequest.post('/book/add', params); //预约
+export const bookadd = (params = {}) => mainRequest.post('/2/book/add', params); //预约
 
 /********************演讲员相关********************/
-export const speechoractivitymylist = (params = {}) => mainRequest.get('/speechor/activity/mylist', params); //活动列表（未结束）
-export const speechoractivityendlist = (params = {}) => mainRequest.get('/speechor/activity/endlist',
+export const speechoractivitymylist = (params = {}) => mainRequest.get('/2/speechor/activity/mylist', params); //活动列表（未结束）
+export const speechoractivityendlist = (params = {}) => mainRequest.get('/2/speechor/activity/endlist',
 	params); //活动列表（已结束）
-export const speechoractivityaccept = (params = {}) => mainRequest.post('/speechor/activity/accept', params); // 接受
-export const speechoractivitystart = (params = {}) => mainRequest.post('/speechor/activity/start', params); // 开始
-export const speechoractivityend = (params = {}) => mainRequest.post('/speechor/activity/end', params); // 结束
+export const speechoractivityaccept = (params = {}) => mainRequest.get('/2/speechor/activity/accept', params); // 接受
+export const speechoractivitystart = (params = {}) => mainRequest.get('/2/speechor/activity/start', params); // 开始
+export const speechoractivityend = (params = {}) => mainRequest.get('/2/speechor/activity/end', params); // 结束
 export const speechoractivityqrcode = (params = {}) => mainRequest.get('/speechor/activity/qrcode', params); //生成小程序码
 export const speechoractivitycommentlist = (params = {}) => mainRequest.get('/speechor/activity/commentlist',
 	params); //评论列表
@@ -87,4 +89,3 @@ export const messageone = (params = {}) => mainRequest.get('/notice/one', params
 export const ranking = (params = {}) => mainRequest.get('/ranking', params); //获取积分排名
 export const view_click = (params = {}) => mainRequest.post('/view_click', params); //点击文章获取积分
 export const add_points = (params = {}) => mainRequest.post('/user/add_points', params); //获取积分
-

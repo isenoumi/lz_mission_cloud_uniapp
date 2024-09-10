@@ -20,6 +20,7 @@ module.exports = (vm) => {
 			config.data = config.data || {}
 			// 可以在此通过vm引用vuex中的变量，具体值在vm.$store.state中
 			config.header.Authorization = vm.$store.state.token;
+			config.header['x-Resource-Token'] = uni.getStorageSync('xtoken')
 			return config
 
 		}, (config) => // 可使用async await 做异步操作

@@ -19,7 +19,7 @@
       <!--         <txv-video :vid="videoUrl" playerid="txv1"></txv-video>
  -->
 
-      <view class="header-images">
+      <view class="">
         <view class="u-p" style="position: relative;">
           <view class="leftBox">
             <u--text :text="detail.name" bold></u--text>
@@ -31,6 +31,7 @@
             <u--text text="课程简介" bold></u--text>
           </view>
           <!-- <text class="text-df">{{detail.info}}</text> -->
+          {{ detail.info }}
           <mp-html :content="detail.info" />
         </view>
       </view>
@@ -199,14 +200,14 @@
           returnData.text = '已完成答题'
 
         }
-        // console.log('完成阅读')
-        const studyStatus = this.detail.knowledge.some(item => {
-          return item.study == false
-        })
-        if (studyStatus) {
-          returnData.disabled = true;
-          returnData.text = '请完成课程学习'
-        }
+        console.log('完成阅读',this.detail)
+        // const studyStatus = this.detail.knowledge.some(item => {
+        //   return item.study == false
+        // })
+        // if (studyStatus) {
+        //   returnData.disabled = true;
+        //   returnData.text = '请完成课程学习'
+        // }
         if (returnData.text === '前往答题' || returnData.text === '已完成答题') {
           console.log('我读完了')
 
@@ -258,10 +259,10 @@
         courseone({
           id: this.id
         }).then((res) => {
-          // console.log(res.data,'我是item')
-          this.detail = res.data
+          console.log(res.result,'我是item')
+          this.detail = res.result
           this.pageLoading = false;
-          if (res.data.is_answer) {
+          if (res.result.is_answer) {
 
             if (this.points_acquisition_rule == 2) {
               if (uni.getStorageSync('avatarUrl')) {

@@ -55,7 +55,6 @@
       </view>
     </view>
 
-
   </view>
 </template>
 
@@ -79,28 +78,27 @@
           url: 'http://192.168.100.61:8089/mission_b/xcx_api/bkbContinuousClockingRecord/list',
           data: {
             // phone: uni.getStorageSync("phone"),
-            phone: '梵蒂冈的是'
+            phone: '梵蒂冈的是',
           },
-          method: "GET",
-          success: (res) => {
+          method: 'GET',
+          success: res => {
             this.checkDays = res.data.result.records.length
-
-          }
+          },
         })
       },
 
       back() {
         uni.switchTab({
-          url: '/pages/index/index'
+          url: '/pages/index/index',
         })
       },
 
       toCheck() {
         uni.navigateTo({
-          url: '/pages/check/check'
+          url: '/pages/check/check',
         })
       },
-    }
+    },
   }
 </script>
 
@@ -144,14 +142,14 @@
     // margin-top: -300rpx;
     width: 625rpx;
     height: 845rpx;
-    background: #FAFAFA;
+    background: #fafafa;
     border-radius: 20rpx;
 
     .titleA {
       display: flex;
       justify-content: space-between;
       height: 82rpx;
-      background: #FFFFFF;
+      background: #ffffff;
       border-radius: 13rpx 13rpx 0rpx 0rpx;
       height: 24rpx;
       line-height: 24rpx;
@@ -166,9 +164,6 @@
     }
   }
 
-
-
-
   .box {
     display: flex;
     justify-content: space-between;
@@ -178,7 +173,7 @@
       padding-top: 5rpx;
       width: 100rpx;
       height: 100rpx;
-      background: #29CE8C;
+      background: #29ce8c;
       border-radius: 7rpx;
       text-align: center;
       margin-top: 20rpx;
@@ -200,7 +195,7 @@
       font-size: 24rpx;
       font-family: PingFang SC;
       font-weight: 500;
-      color: #FFFFFF;
+      color: #ffffff;
       text-align: center;
     }
 
@@ -219,17 +214,16 @@
     }
 
     .noCheck {
-
       // margin-top: 40rpx;
       .day {
-        background-color: #ACECD2;
+        background-color: #acecd2;
       }
 
       .title {
         font-size: 20rpx;
         font-family: PingFang SC;
         font-weight: 500;
-        color: #29CE8C;
+        color: #29ce8c;
       }
 
       image {
@@ -237,13 +231,12 @@
         height: 40rpx;
       }
     }
-
   }
 
   .btn {
     width: 425rpx;
     height: 100rpx;
-    background: #29CE8C;
+    background: #29ce8c;
     border-radius: 20rpx;
     line-height: 100rpx;
     color: #fff;

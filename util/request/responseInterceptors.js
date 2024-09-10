@@ -19,9 +19,17 @@ module.exports = (vm) => {
     uni.$u.http.interceptors.response.use((response) => {
         /* 对响应成功做点什么 可使用async await 做异步操作*/
         const data = response.data
-
+        console.log('data', data);
         // 自定义参数
-        if (data.error_code !== 0) { // 服务端返回的状态码不等于200，则reject()
+        // TODO request.js
+        // if (data.error_code !== 0) { // 服务端返回的状态码不等于200，则reject()
+        //     uni.showToast({
+        //         title: data.msg,
+        //         icon: 'none'
+        //     })
+        //     return Promise.reject(data)
+        // }
+        if (data.code !== 200) { // 服务端返回的状态码不等于200，则reject()
             uni.showToast({
                 title: data.msg,
                 icon: 'none'
@@ -94,6 +102,7 @@ module.exports = (vm) => {
         }
 
         const data = response.data
+        console.log(data, 'nkjasjdks');
         if (data && data.hasOwnProperty('error_code') && data.error_code !==
             0) { // 服务端返回的状态码不等于200，则reject()
             // uni.showToast({

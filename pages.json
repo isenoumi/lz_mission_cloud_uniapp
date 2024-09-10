@@ -14,7 +14,7 @@
       "path": "pages/index/index",
       "style": {
         "navigationBarTitleText": "首页",
-        "navigationStyle": "custom", // 隐藏系统导航栏
+        "navigationStyle": "custom",
         "navigationBarTextStyle": "white"
       } // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
     },
@@ -22,7 +22,15 @@
       "path": "pages/circle/index",
       "style": {
         "navigationBarTitleText": "圈子",
-        "navigationStyle": "custom", // 隐藏系统导航栏
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/index/webView",
+      "style": {
+        "navigationBarTitleText": "h5",
+        "navigationStyle": "custom",
         "navigationBarTextStyle": "white"
       }
     },
@@ -43,7 +51,7 @@
       "path": "pages/center/index",
       "style": {
         "navigationBarTitleText": "我的",
-        "navigationStyle": "custom", // 隐藏系统导航栏
+        "navigationStyle": "custom",
         "navigationBarTextStyle": "white"
       }
     },
@@ -51,7 +59,7 @@
       "path": "pages/shop/shop",
       "style": {
         "navigationBarTitleText": "蓝芽积分",
-        "navigationStyle": "custom", // 隐藏系统导航栏
+        "navigationStyle": "custom",
         "navigationBarTextStyle": "white"
       } // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
     }
@@ -73,10 +81,58 @@
 
       "pages": [
         {
+          "path": "speak/index",
+          "style": {
+            "navigationBarTitleText": "联系我们",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "webView/lzcp",
+          "style": {
+            "navigationBarTitleText": "泸州测评",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "activitySquare/index",
+          "style": {
+            "navigationBarTitleText": "参与垃圾分类",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "activitySquare/missionaryBase",
+          "style": {
+            "navigationBarTitleText": "宣教基地",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "addPoints/index",
+          "style": {
+            "navigationBarTitleText": "加分",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "volunteer/index",
+          "style": {
+            "navigationBarTitleText": "志愿者",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
           "path": "classification/classification",
           "style": {
             // "navigationBarTitleText": "",
-            "navigationStyle": "custom", //取消默认导航栏
+            "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
         },
@@ -84,7 +140,7 @@
           "path": "Invitefriends/index",
           "style": {
             // "navigationBarTitleText": "",
-            "navigationStyle": "custom", //取消默认导航栏
+            "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
         },
@@ -92,14 +148,16 @@
           "path": "integral/index",
           "style": {
             "navigationBarTitleText": "我的积分",
-            "enablePullDownRefresh": false
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom"
           }
         },
         {
           "path": "integral/details",
           "style": {
             "navigationBarTitleText": "订单详情",
-            "enablePullDownRefresh": false
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom"
           }
         },
         {
@@ -126,7 +184,7 @@
           "path": "checkSuccess/checkSuccess",
           "style": {
             "navigationBarTitleText": "",
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
         },
@@ -136,7 +194,7 @@
           "style": {
             "navigationBarTitleText": "答题详情",
             "enablePullDownRefresh": false,
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           }
         },
@@ -170,10 +228,18 @@
       "root": "pageD",
       "pages": [
         {
+          "path": "userShoppingOrder/userShoppingOrder",
+          "style": {
+            "navigationBarTitleText": "兑换记录",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
           "path": "address/index",
           "style": {
             "navigationBarTitleText": "收货地址",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
         },
@@ -195,14 +261,16 @@
           "path": "shop/details",
           "style": {
             "navigationBarTitleText": "商品详情",
-            "enablePullDownRefresh": false
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom"
           }
         },
         {
           "path": "order/index",
           "style": {
             "navigationBarTitleText": "订单详情",
-            "enablePullDownRefresh": false
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom"
           }
         },
         {
@@ -214,7 +282,114 @@
         }
       ]
     },
-
+    {
+      "root": "pageLimited",
+      "pages": [
+        {
+          "path": "secretKey/index",
+          "style": {
+            "navigationBarTitleText": "作业台账",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "index/index",
+          "style": {
+            "navigationBarTitleText": "作业台账",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "homeworkLedger/index",
+          "style": {
+            "navigationBarTitleText": "提交作业台账",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "homeworkLedger/start",
+          "style": {
+            "navigationBarTitleText": "开始作业",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "homeworkLedgerView/index",
+          "style": {
+            "navigationBarTitleText": "查看作业台账",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "homeworkLedgerView/info",
+          "style": {
+            "navigationBarTitleText": "台账详情",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "inspectionLedger/index",
+          "style": {
+            "navigationBarTitleText": "提交自查台账",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "inspectionLedger/info",
+          "style": {
+            "navigationBarTitleText": "自查台账详情",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "inspectionLedger/list",
+          "style": {
+            "navigationBarTitleText": "自查台账列表",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "identificationLedger/list",
+          "style": {
+            "navigationBarTitleText": "辨识台账",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "identificationLedger/info",
+          "style": {
+            "navigationBarTitleText": "辨识台账",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "manageTable/index",
+          "style": {
+            "navigationBarTitleText": ""
+            // "navigationStyle": "custom",
+            // "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "noticeBoardTable/index",
+          "style": {
+            "navigationBarTitleText": ""
+            // "navigationStyle": "custom",
+            // "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
     {
       "root": "pages/reservation",
       "pages": [
@@ -222,7 +397,7 @@
           "path": "reservation",
           "style": {
             "navigationBarTitleText": "",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
         }
@@ -235,7 +410,7 @@
           "path": "shopExchange",
           "style": {
             "navigationBarTitleText": "商品详情",
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
         }
@@ -248,7 +423,7 @@
           "path": "index",
           "style": {
             "navigationBarTitleText": "答题竞赛",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "enablePullDownRefresh": false
           }
         },
@@ -316,7 +491,7 @@
           "path": "index",
           "style": {
             "navigationBarTitleText": "课程栏目",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           } // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
         },
@@ -324,7 +499,7 @@
           "path": "list",
           "style": {
             "navigationBarTitleText": "课程列表",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           } // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
         },
@@ -332,7 +507,7 @@
           "path": "detail",
           "style": {
             "navigationBarTitleText": "课程详情",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           }
         },
@@ -341,7 +516,7 @@
           "style": {
             "navigationBarTitleText": "课程详情",
             "enablePullDownRefresh": false,
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white",
             "usingComponents": {}
           }
@@ -357,7 +532,7 @@
           "style": {
             "navigationBarTitleText": "文化知识详情",
             "enablePullDownRefresh": false,
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white",
             "usingComponents": {}
           }
@@ -366,7 +541,7 @@
           "path": "index",
           "style": {
             "navigationBarTitleText": "文化知识栏目",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           } // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
         },
@@ -374,7 +549,7 @@
           "path": "list",
           "style": {
             "navigationBarTitleText": "文化知识",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           } // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
         }
@@ -388,7 +563,7 @@
           "style": {
             "navigationBarTitleText": "文化知识详情",
             "enablePullDownRefresh": false,
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white",
             "usingComponents": {}
           }
@@ -397,7 +572,7 @@
           "path": "index",
           "style": {
             "navigationBarTitleText": "文化知识栏目",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           } // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
         },
@@ -405,7 +580,7 @@
           "path": "list",
           "style": {
             "navigationBarTitleText": "文化知识",
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           } // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
         }
@@ -420,7 +595,7 @@
           "style": {
             "navigationBarTitleText": "我的任务",
             "enablePullDownRefresh": false,
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           }
         },
@@ -436,7 +611,7 @@
           "style": {
             "navigationBarTitleText": "任务详情",
             "enablePullDownRefresh": false,
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           }
         },
@@ -464,7 +639,7 @@
           "style": {
             "navigationBarTitleText": "活动任务",
             "enablePullDownRefresh": false
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             // "navigationBarTextStyle": "white"
           }
         },
@@ -473,7 +648,7 @@
           "style": {
             "navigationBarTitleText": "评价码",
             "enablePullDownRefresh": false
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             // "navigationBarTextStyle": "white"
           }
         },
@@ -481,8 +656,17 @@
           "path": "detail",
           "style": {
             "navigationBarTitleText": "活动详情",
-            "enablePullDownRefresh": false
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom"
+            // "navigationBarTextStyle": "white"
+          }
+        },
+        {
+          "path": "subscribe",
+          "style": {
+            "navigationBarTitleText": "预约",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom"
             // "navigationBarTextStyle": "white"
           }
         },
@@ -491,7 +675,7 @@
           "style": {
             "navigationBarTitleText": "活动",
             "enablePullDownRefresh": false
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             // "navigationBarTextStyle": "white"
           }
         },
@@ -500,7 +684,7 @@
           "style": {
             "navigationBarTitleText": "评价详情",
             "enablePullDownRefresh": false
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             // "navigationBarTextStyle": "white"
           }
         },
@@ -509,7 +693,7 @@
           "style": {
             "navigationBarTitleText": "反馈结果",
             "enablePullDownRefresh": false
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             // "navigationBarTextStyle": "white"
           }
         }
@@ -523,7 +707,7 @@
           "style": {
             "navigationBarTitleText": "活动管理",
             "enablePullDownRefresh": false,
-            "navigationStyle": "custom", // 隐藏系统导航栏
+            "navigationStyle": "custom",
             "navigationBarTextStyle": "white"
           }
         },
@@ -532,7 +716,7 @@
           "style": {
             "navigationBarTitleText": "活动评价内容",
             "enablePullDownRefresh": false
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             // "navigationBarTextStyle": "white"
           }
         },
@@ -541,7 +725,7 @@
           "style": {
             "navigationBarTitleText": "活动评价内容",
             "enablePullDownRefresh": false
-            // "navigationStyle": "custom", // 隐藏系统导航栏
+            // "navigationStyle": "custom",
             // "navigationBarTextStyle": "white"
           }
         }
@@ -575,17 +759,26 @@
             "navigationBarTitleText": "个人信息",
             "enablePullDownRefresh": false
           }
-        },
-        {
-          "path": "login",
-          "style": {
-            "navigationBarTitleText": "授权登录",
-            "enablePullDownRefresh": false
-          }
         }
+        // {
+        //   "path": "login",
+        //   "style": {
+        //     "navigationBarTitleText": "授权登录",
+        //     "enablePullDownRefresh": false
+        //   }
+        // }
       ]
     }
   ],
+  "preloadRule": {
+    // 页面路径
+    "pages/index/index":
+      // 页面的预下载配置
+      {
+        "network": "all", // all(不限网络) wifi(仅wifi下预下载)
+        "packages": ["pageB", "pageD"] // 预下载分包的 root 或 name。__APP__ 表示主包
+      }
+  },
   "globalStyle": {
     "navigationBarTitleText": "巴科宣教",
     "navigationBarBackgroundColor": "#fff",

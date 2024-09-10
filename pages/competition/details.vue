@@ -8,22 +8,17 @@
 		</navbar> -->
     <u-loading-page :loading="pageLoading"></u-loading-page>
     <!-- 答题主页面 -->
-    <question v-if="!pageLoading" :question="question" :flag="flag" ref="successFun" @success="handleSuccess"
-      :btnLoading="btnLoading" @sendData="getData" :is_answer="is_answer" />
+    <question v-if="!pageLoading" :question="question" :flag="flag" ref="successFun" @success="handleSuccess" :btnLoading="btnLoading" @sendData="getData" :is_answer="is_answer" />
   </view>
 </template>
 
 <script>
   import question from './components/choiceqst.vue'
-  import {
-    saveanswer,
-    coursechoiceqst,
-    add_points
-  } from '@/common/api.js'
+  import { saveanswer, coursechoiceqst, add_points } from '@/common/api.js'
 
   export default {
     components: {
-      question
+      question,
     },
     data() {
       return {
@@ -39,11 +34,11 @@
         title: '', //答题名称
         flg: 1,
         flag: 1,
-      };
+      }
     },
     onLoad(option) {
       console.log(option, '传过来了')
-      this.getDetail();
+      this.getDetail()
       // if (option.id) {
 
       // 	this.id = option.id
@@ -59,90 +54,89 @@
       // 	})
       // 	return
       // }
-
     },
-    computed: {
-
-    },
+    computed: {},
     methods: {
       answeredQuestionsAdded() {
         uni.request({
           url: 'https://lz.api.cestech.com.cn:8150/mission_b/xcx_api/bkbChoiceqst_answer/answeredQuestionsAdded',
-          data: { //参数
-            phone: uni.getStorageSync("phone")
+          data: {
+            //参数
+            phone: uni.getStorageSync('phone'),
           },
           header: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
             // 'Content-Type': 'application/json' //自定义请求头信息
           },
           method: 'GET', //请求方式，必须为大写
-          success: (res) => {
-            console.log('接口返回------', res);
-          }
+          success: res => {
+            console.log('接口返回------', res)
+          },
         })
       },
-      getData: function(res) {
+      getData: function (res) {
         console.log(res, 'x') //我是子
         console.log(this.flg, 'y') //我是子
         this.flg = res
         console.log(this.flg, 'z') //我是子
-
       },
       pointsFun() {
         uni.request({
           url: 'https://lz.api.cestech.com.cn:8150/mission_b/xcx_api/bkbChoiceqst_answer/answerPoints',
-          data: { //参数
-            phone: uni.getStorageSync("phone")
+          data: {
+            //参数
+            phone: uni.getStorageSync('phone'),
           },
           header: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
             // 'Content-Type': 'application/json' //自定义请求头信息
           },
           method: 'GET', //请求方式，必须为大写
-          success: (res) => {
-            console.log('接口返回------', res.data);
+          success: res => {
+            console.log('接口返回------', res.data)
             // if(res.data)
             uni.showToast({
               icon: 'none',
-              title: res.data.message
+              title: res.data.message,
             })
-          }
+          },
         })
       },
       doTheNumberOfQuestionsToAdd() {
         uni.request({
           url: 'https://lz.api.cestech.com.cn:8150/mission_b/xcx_api/bkbChoiceqst_answer/doTheNumberOfQuestionsToAdd',
-          data: { //参数
-            phone: uni.getStorageSync("phone")
+          data: {
+            //参数
+            phone: uni.getStorageSync('phone'),
           },
           header: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
             // 'Content-Type': 'application/json' //自定义请求头信息
           },
           method: 'GET', //请求方式，必须为大写
-          success: (res) => {
-            console.log('接口返回------', res.data);
+          success: res => {
+            this.answeredQuestionsAdded()
             // if(res.data)
             uni.showToast({
               icon: 'none',
-              title: res.data.message
+              title: res.data.message,
             })
-          }
+          },
         })
       },
       getDetail() {
         uni.request({
           url: 'https://lz.api.cestech.com.cn:8150/mission_b/xcx_api/bkbChoiceqst_answer/queryRandom',
-          data: { //参数
-
+          data: {
+            //参数
           },
           header: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
             // 'Content-Type': 'application/json' //自定义请求头信息
           },
           method: 'GET', //请求方式，必须为大写
-          success: (res) => {
-            console.log('接口返回------', res.data.result);
+          success: res => {
+            console.log('接口返回------', res.data.result)
             if (res.data.code === 200) {
               let obj = JSON.parse(JSON.stringify(res.data.result))
               let arr = []
@@ -152,9 +146,9 @@
                 arr.push(item)
               })
 
-              console.log(arr);
+              console.log(arr)
               this.question = arr
-              this.pageLoading = false;
+              this.pageLoading = false
             }
 
             // res.data.result.forEach(v => {
@@ -165,7 +159,7 @@
             //   console.log(data, '33333333333333')
 
             // })
-          }
+          },
         })
         // coursechoiceqst({
         //   id: '1656494141808316417'
@@ -175,24 +169,20 @@
         //   // this.pageLoading = false;
         // }).catch(res => {
 
-
         // })
-
       },
-      handleSuccess({
-        answer
-      }) {
-        console.log(this);
+      handleSuccess({ answer }) {
+        console.log(this)
         // let that = this
-        this.btnLoading = true;
+        this.btnLoading = true
         console.log('答题', this.flg)
         // if (this.flg === 1) {
         this.pointsFun()
         this.doTheNumberOfQuestionsToAdd()
-        this.answeredQuestionsAdded();
+
         // this.$emit("successFun")
         console.log(this.$refs, 'this.$refs')
-        this.$refs.successFun.successFun();
+        this.$refs.successFun.successFun()
         // saveanswer({
         //   id: '1656494141808316417',
         // }).then((res) => {
@@ -203,7 +193,6 @@
         //     icon: 'success',
         //   });
 
-
         // }).catch(res => {
         //   console.log(res)
 
@@ -213,13 +202,9 @@
         // } else {
 
         // }
-
       },
-
-    }
+    },
   }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
